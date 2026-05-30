@@ -155,7 +155,6 @@ export default {
   },
 
   async bootstrap({ strapi }: any) {
-    // Bootstrap logic is removed because data is now managed via Strapi export/import.
-    // This prevents slow startup times and silent timeouts on Render.
+    // No seeding in production – keep empty
   }
 };

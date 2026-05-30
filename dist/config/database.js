@@ -26,22 +26,16 @@ const config = ({ env }) => {
             pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
         },
         postgres: {
-            connection: env('DATABASE_URL')
-                ? {
+            connection: (() => {
+                if (!env('DATABASE_URL')) {
+                    console.error('\n\n❌ FATAL ERROR: DATABASE_URL is completely missing from environment variables!\n\n');
+                    throw new Error('DATABASE_URL environment variable is required for Postgres connection.');
+                }
+                return {
                     connectionString: env('DATABASE_URL'),
                     ssl: { rejectUnauthorized: false },
-                }
-                : {
-                    host: env('DATABASE_HOST', 'localhost'),
-                    port: env.int('DATABASE_PORT', 5432),
-                    database: env('DATABASE_NAME', 'strapi'),
-                    user: env('DATABASE_USERNAME', 'strapi'),
-                    password: env('DATABASE_PASSWORD', 'strapi'),
-                    ssl: env.bool('DATABASE_SSL', false) && {
-                        rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', false),
-                    },
-                    schema: env('DATABASE_SCHEMA', 'public'),
-                },
+                };
+            })(),
             pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
         },
         sqlite: {

@@ -1,0 +1,11 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('\n\n❌ FATAL ERROR: SUPABASE_URL or SUPABASE_ANON_KEY missing from environment variables!\n\n');
+  throw new Error('Supabase credentials are required');
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
