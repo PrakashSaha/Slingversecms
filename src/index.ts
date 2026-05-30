@@ -1,5 +1,9 @@
+import dns from 'dns';
 import fs from 'fs';
 import path from 'path';
+
+// Force IPv4 DNS resolution – Render cannot reach Supabase over IPv6
+dns.setDefaultResultOrder('ipv4first');
 
 export default {
   register({ strapi }: any) {
