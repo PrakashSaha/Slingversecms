@@ -16,6 +16,7 @@
     "db:export": "strapi export --no-encrypt --file export.tar.gz",
     "seed:supabase": "ts-node src/seedSupabase.ts"
   },
+  "dependencies": {
     "@strapi/plugin-cloud": "5.46.1",
     "@strapi/plugin-users-permissions": "5.46.1",
     "@strapi/provider-upload-aws-s3": "^5.47.0",
