@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
+const dns_1 = require("dns");
+(0, dns_1.setDefaultResultOrder)('ipv4first'); // force all DNS to resolve IPv4 first
 const config = ({ env }) => {
     const client = env('DATABASE_CLIENT', 'sqlite');
     const connections = {
@@ -34,9 +36,11 @@ const config = ({ env }) => {
                 return {
                     connectionString: env('DATABASE_URL'),
                     ssl: { rejectUnauthorized: false },
+                    family: 4,
                 };
             })(),
             pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+            acquireConnectionTimeout: 60000,
         },
         sqlite: {
             connection: {

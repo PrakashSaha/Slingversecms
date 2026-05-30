@@ -1,5 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const dns_1 = __importDefault(require("dns"));
+// Force IPv4 DNS resolution – Render cannot reach Supabase over IPv6
+dns_1.default.setDefaultResultOrder('ipv4first');
 exports.default = {
     register({ strapi }) {
         strapi.server.routes([
@@ -147,7 +153,6 @@ exports.default = {
         ]);
     },
     async bootstrap({ strapi }) {
-        // Bootstrap logic is removed because data is now managed via Strapi export/import.
-        // This prevents slow startup times and silent timeouts on Render.
+        // No seeding in production – keep empty
     }
 };

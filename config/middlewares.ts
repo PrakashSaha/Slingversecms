@@ -7,7 +7,9 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::cors',
     config: {
-      origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : ['*'],
+      origin: process.env.CORS_ORIGIN 
+        ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim().replace(/\/$/, '')) 
+        : ['*'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
