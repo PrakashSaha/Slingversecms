@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables
+.env*
+!.env.example
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# CMS (Strapi)
+build/
+.cache/
+.tmp/
+public/uploads/
+.strapi-updater.json
+database/*.db
+database/*.db-journal
+database/*.sqlite
+database/*.sqlite-journal
+export.tar.gz

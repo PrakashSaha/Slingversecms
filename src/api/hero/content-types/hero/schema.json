@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "heros",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heros",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "titlePrefix": {
+      "type": "string"
+    },
+    "titleHighlighted": {
+      "type": "string"
+    },
+    "titleSuffix": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    },
+    "trustedStackLabel": {
+      "type": "string"
+    },
+    "marqueeLogos": {
+      "type": "json"
+    }
+  }
+}

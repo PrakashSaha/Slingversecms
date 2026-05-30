@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "process-steps",
+  "info": {
+    "singularName": "process-step",
+    "pluralName": "process-steps",
+    "displayName": "Process Step"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "stepId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

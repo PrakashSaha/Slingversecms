@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "team-members",
+    "info": {
+        "singularName": "team-member",
+        "pluralName": "team-members",
+        "displayName": "Team Member"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "role": {
+            "type": "string"
+        },
+        "bio": {
+            "type": "text"
+        },
+        "image": {
+            "type": "string"
+        },
+        "skills": {
+            "type": "json"
+        }
+    }
+}

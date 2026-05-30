@@ -1,0 +1,30 @@
+{
+    "kind": "singleType",
+    "collectionName": "services-sections",
+    "info": {
+        "singularName": "services-section",
+        "pluralName": "services-sections",
+        "displayName": "Services"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "headerPrefix": {
+            "type": "string"
+        },
+        "headerHighlighted": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "ctaLabel": {
+            "type": "string"
+        },
+        "ctaHref": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "kind": "collectionType",
+    "collectionName": "case-studys",
+    "info": {
+        "singularName": "case-study",
+        "pluralName": "case-studys",
+        "displayName": "Case Study"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "industry": {
+            "type": "string"
+        },
+        "category": {
+            "type": "string"
+        },
+        "image": {
+            "type": "string"
+        },
+        "iconName": {
+            "type": "string"
+        },
+        "challenge": {
+            "type": "text"
+        },
+        "solution": {
+            "type": "text"
+        },
+        "fullChallenge": {
+            "type": "text"
+        },
+        "fullSolution": {
+            "type": "text"
+        },
+        "results": {
+            "type": "json"
+        },
+        "techStack": {
+            "type": "json"
+        }
+    }
+}

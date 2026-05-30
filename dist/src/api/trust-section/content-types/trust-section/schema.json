@@ -1,0 +1,51 @@
+{
+    "kind": "singleType",
+    "collectionName": "trust-sections",
+    "info": {
+        "singularName": "trust-section",
+        "pluralName": "trust-sections",
+        "displayName": "Trust"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "header": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "ctaLabel": {
+            "type": "string"
+        },
+        "ctaHref": {
+            "type": "string"
+        },
+        "badgeLabel": {
+            "type": "string"
+        },
+        "quote": {
+            "type": "text"
+        },
+        "directorName": {
+            "type": "string"
+        },
+        "directorTitle": {
+            "type": "string"
+        },
+        "directorImage": {
+            "type": "string"
+        },
+        "activeStatusLabel": {
+            "type": "string"
+        },
+        "meetTeamCtaLabel": {
+            "type": "string"
+        },
+        "meetTeamCtaHref": {
+            "type": "string"
+        }
+    }
+}

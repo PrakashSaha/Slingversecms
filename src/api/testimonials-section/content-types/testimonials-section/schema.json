@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "testimonials-sections",
+  "info": {
+    "singularName": "testimonials-section",
+    "pluralName": "testimonials-sections",
+    "displayName": "Testimonials"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headerPrefix": {
+      "type": "string"
+    },
+    "headerHighlighted": {
+      "type": "string"
+    },
+    "headerSuffix": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}

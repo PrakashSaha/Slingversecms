@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tech-categorys",
+  "info": {
+    "singularName": "tech-category",
+    "pluralName": "tech-categorys",
+    "displayName": "Tech Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "json"
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "accent": {
+      "type": "string"
+    },
+    "bgAccent": {
+      "type": "string"
+    },
+    "borderAccent": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "json"
+    }
+  }
+}

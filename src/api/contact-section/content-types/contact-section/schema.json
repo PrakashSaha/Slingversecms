@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact-sections",
+  "info": {
+    "singularName": "contact-section",
+    "pluralName": "contact-sections",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headerPrefix": {
+      "type": "string"
+    },
+    "headerHighlighted": {
+      "type": "string"
+    },
+    "headerSuffix": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "json"
+    },
+    "formTitlePrefix": {
+      "type": "string"
+    },
+    "formTitleHighlighted": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "json"
+    },
+    "submitButtonLabel": {
+      "type": "string"
+    },
+    "submitButtonSuccess": {
+      "type": "string"
+    }
+  }
+}

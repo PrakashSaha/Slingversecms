@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "case-studies-pages",
+  "info": {
+    "singularName": "case-studies-page",
+    "pluralName": "case-studies-pages",
+    "displayName": "Case Studies Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "heroBadge": {
+      "type": "string"
+    },
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroDesc": {
+      "type": "text"
+    },
+    "filters": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industrys",
+  "info": {
+    "singularName": "industry",
+    "pluralName": "industrys",
+    "displayName": "Industry"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "iconName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "bgColor": {
+      "type": "string"
+    },
+    "items": {
+      "type": "json"
+    }
+  }
+}

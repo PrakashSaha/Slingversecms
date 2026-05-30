@@ -1,0 +1,33 @@
+{
+    "kind": "singleType",
+    "collectionName": "tech-stack-sections",
+    "info": {
+        "singularName": "tech-stack-section",
+        "pluralName": "tech-stack-sections",
+        "displayName": "Tech Stack"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "headerPrefix": {
+            "type": "string"
+        },
+        "headerHighlighted": {
+            "type": "string"
+        },
+        "headerBlueHighlighted": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "ctaLabel": {
+            "type": "string"
+        },
+        "ctaHref": {
+            "type": "string"
+        }
+    }
+}

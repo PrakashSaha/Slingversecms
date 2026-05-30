@@ -1,0 +1,74 @@
+{
+    "kind": "singleType",
+    "collectionName": "company-pages",
+    "info": {
+        "singularName": "company-page",
+        "pluralName": "company-pages",
+        "displayName": "Company Page"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "heroImage": {
+            "type": "string"
+        },
+        "heroHeadlinePrefix": {
+            "type": "string"
+        },
+        "heroHeadlineHighlighted": {
+            "type": "string"
+        },
+        "heroHeadlineSuffix": {
+            "type": "string"
+        },
+        "heroDescription": {
+            "type": "text"
+        },
+        "visionTitle": {
+            "type": "string"
+        },
+        "visionDesc": {
+            "type": "text"
+        },
+        "visionIconName": {
+            "type": "string"
+        },
+        "missionTitle": {
+            "type": "string"
+        },
+        "missionDesc": {
+            "type": "text"
+        },
+        "missionIconName": {
+            "type": "string"
+        },
+        "valuesBadge": {
+            "type": "string"
+        },
+        "valuesTitle": {
+            "type": "string"
+        },
+        "valuesList": {
+            "type": "json"
+        },
+        "teamBadge": {
+            "type": "string"
+        },
+        "teamTitle": {
+            "type": "string"
+        },
+        "teamDesc": {
+            "type": "text"
+        },
+        "bentoBadge": {
+            "type": "string"
+        },
+        "bentoTitle": {
+            "type": "string"
+        },
+        "bentoImages": {
+            "type": "json"
+        }
+    }
+}
