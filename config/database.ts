@@ -1,5 +1,8 @@
 import path from 'path';
+import { setDefaultResultOrder } from 'dns';
 import type { Core } from '@strapi/strapi';
+
+setDefaultResultOrder('ipv4first');  // force all DNS to resolve IPv4 first
 
 const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database => {
   const client = env('DATABASE_CLIENT', 'sqlite');
@@ -32,6 +35,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database 
         return {
           connectionString: env('DATABASE_URL'),
           ssl: { rejectUnauthorized: false },
+          family: 4,
         };
       })(),
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
