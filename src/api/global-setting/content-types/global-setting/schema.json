@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_settings",
+  "info": {
+    "singularName": "global-setting",
+    "pluralName": "global-settings",
+    "displayName": "Global Setting"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "siteName": {
+      "type": "string"
+    },
+    "defaultMetaTitle": {
+      "type": "string"
+    },
+    "defaultMetaDescription": {
+      "type": "text"
+    },
+    "targetRegions": {
+      "type": "json"
+    }
+  }
+}

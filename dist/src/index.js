@@ -16,14 +16,15 @@ exports.default = {
                     try {
                         const getSingle = async (uid) => await strapi.db.query(uid).findOne() || {};
                         const getCollection = async (uid) => await strapi.db.query(uid).findMany() || [];
-                        const [hero, servicesSection, servicesList, techStackSection, techCategories, industriesSection, industriesList, processSection, processSteps, trustSection, testimonialsSection, testimonialsList, contactSection, companyPage, teamMembers, caseStudiesPage, caseStudiesList] = await Promise.all([
+                        const [hero, servicesSection, servicesList, techStackSection, techCategories, industriesSection, industriesList, processSection, processSteps, trustSection, testimonialsSection, testimonialsList, contactSection, companyPage, teamMembers, caseStudiesPage, caseStudiesList, footer, globalSetting] = await Promise.all([
                             getSingle('api::hero.hero'), getSingle('api::services-section.services-section'), getCollection('api::service.service'),
                             getSingle('api::tech-stack-section.tech-stack-section'), getCollection('api::tech-category.tech-category'),
                             getSingle('api::industries-section.industries-section'), getCollection('api::industry.industry'),
                             getSingle('api::process-section.process-section'), getCollection('api::process-step.process-step'),
                             getSingle('api::trust-section.trust-section'), getSingle('api::testimonials-section.testimonials-section'), getCollection('api::testimonial.testimonial'),
                             getSingle('api::contact-section.contact-section'), getSingle('api::company-page.company-page'), getCollection('api::team-member.team-member'),
-                            getSingle('api::case-studies-page.case-studies-page'), getCollection('api::case-study.case-study')
+                            getSingle('api::case-studies-page.case-studies-page'), getCollection('api::case-study.case-study'),
+                            getSingle('api::footer.footer'), getSingle('api::global-setting.global-setting')
                         ]);
                         ctx.body = {
                             hero: {
@@ -96,6 +97,7 @@ exports.default = {
                                 submitButtonLabel: contactSection.submitButtonLabel,
                                 submitButtonSuccess: contactSection.submitButtonSuccess
                             },
+                            faq: contactSection.faqSection || {},
                             companyPage: {
                                 hero: {
                                     image: companyPage.heroImage,
@@ -139,10 +141,41 @@ exports.default = {
                                 },
                                 filters: caseStudiesPage.filters,
                                 list: caseStudiesList
+                            },
+                            footer: {
+                                socialLinks: footer.socialLinks || [],
+                                footerLinks: footer.footerLinks || [],
+                                copyrightText: footer.copyrightText || 'Copyright 2026 Sling Verse. All Rights Reserved.'
+                            },
+                            globalSetting: {
+                                defaultMetaTitle: globalSetting.defaultMetaTitle || '',
+                                defaultMetaDescription: globalSetting.defaultMetaDescription || '',
+                                siteName: globalSetting.siteName || 'SlingVerse'
                             }
                         };
                     }
                     catch (err) {
+                        ctx.body = { error: err.message };
+                    }
+                },
+                config: {
+                    auth: false
+                }
+            },
+            {
+                method: 'POST',
+                path: '/api/leads',
+                handler: async (ctx) => {
+                    var _a;
+                    try {
+                        const bodyData = ((_a = ctx.request.body) === null || _a === void 0 ? void 0 : _a.data) || ctx.request.body;
+                        const entry = await strapi.entityService.create('api::lead.lead', {
+                            data: bodyData,
+                        });
+                        ctx.body = { data: entry };
+                    }
+                    catch (err) {
+                        ctx.status = 500;
                         ctx.body = { error: err.message };
                     }
                 },

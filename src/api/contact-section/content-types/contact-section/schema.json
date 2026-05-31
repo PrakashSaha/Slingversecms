@@ -40,6 +40,9 @@
     },
     "submitButtonSuccess": {
       "type": "string"
+    },
+    "faqSection": {
+      "type": "json"
     }
   }
 }
