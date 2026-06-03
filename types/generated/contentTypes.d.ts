@@ -440,44 +440,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
-  collectionName: 'blog-posts';
-  info: {
-    displayName: 'Blog Post';
-    pluralName: 'blog-posts';
-    singularName: 'blog-post';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    author: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'SlingVerse Team'>;
-    category: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    date: Schema.Attribute.String;
-    excerpt: Schema.Attribute.Text;
-    iconName: Schema.Attribute.String;
-    image: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::blog-post.blog-post'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    readTime: Schema.Attribute.String;
-    slug: Schema.Attribute.String & Schema.Attribute.Unique;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCaseStudiesPageCaseStudiesPage
   extends Struct.SingleTypeSchema {
   collectionName: 'case-studies-pages';
@@ -1669,7 +1631,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::case-studies-page.case-studies-page': ApiCaseStudiesPageCaseStudiesPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::company-page.company-page': ApiCompanyPageCompanyPage;
